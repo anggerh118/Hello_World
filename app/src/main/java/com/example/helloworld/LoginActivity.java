@@ -3,17 +3,15 @@ package com.example.helloworld;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = LoginActivity.class.getSimpleName();
     private EditText txtUsername;
     private EditText txtPassword;
     private Button btnlogin;
@@ -21,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login);
         txtUsername = findViewById(R.id.txtUsername);
         txtPassword = findViewById(R.id.txtPassword);
         btnlogin = findViewById(R.id.btnlogin);
@@ -30,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(txtPassword.getText().toString().equals("admin") && txtUsername.getText().toString().equals("admin")){
-                    Intent i = new Intent( MainActivity.this,MainActivity2.class);
+                    Intent i = new Intent( LoginActivity.this, HomeActivity2.class);
                     Toast.makeText(getApplicationContext(), "Welcome "+ txtUsername.getText(),   Toast.LENGTH_LONG).show();
                     startActivity(i);
                 }
