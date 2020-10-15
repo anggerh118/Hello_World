@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/colorAccent"
-    android:gravity="center_vertical">
+    android:background="#000000"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,8 @@
             android:layout_height="32dp"
             android:layout_weight="0.25"
             android:gravity="center_vertical"
-            android:text="Username" />
+            android:text="Username"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/txtUsername"
@@ -29,35 +30,37 @@
             android:layout_weight="0.75"
             android:background="@color/colorWhite"
             android:gravity="center_vertical"
-            android:hint="username" />
+            android:hint="username"
+            android:textColor="#000000" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="32dp"
-        android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
         android:gravity="center_horizontal"
+        android:orientation="horizontal"
         android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:layout_marginBottom="10dp">
+        android:paddingRight="5dp">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="0dp"
-            android:layout_weight="0.25"
             android:layout_height="32dp"
+            android:layout_weight="0.25"
             android:gravity="center_vertical"
-            android:text="Password"/>
+            android:text="Password"
+            android:textColor="#FFFFFF" />
 
         <EditText
             android:id="@+id/txtPassword"
-            android:inputType="textPassword"
             android:layout_width="0dp"
-            android:layout_weight="0.75"
             android:layout_height="32dp"
+            android:layout_weight="0.75"
+            android:background="@color/colorWhite"
             android:gravity="center_vertical"
             android:hint="password"
-            android:background="@color/colorWhite"/>
+            android:inputType="textPassword" />
     </LinearLayout>
 
     <Button
@@ -66,5 +69,5 @@
         android:layout_height="wrap_content"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:text="Login"/>
+        android:text="Login" />
 </LinearLayout>
