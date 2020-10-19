@@ -109,20 +109,20 @@ public class HomeActivity2 extends AppCompatActivity {
                 case WifiManager.WIFI_STATE_ENABLED:
                     wifiSwitch.setChecked(true);
                     wifiSwitch.setText("WiFi is On");
-                    notifOn("WiFi Tersambung"); break;
+                    notification("WiFi Tersambung"); break;
                 case WifiManager.WIFI_STATE_DISABLED:
                     wifiSwitch.setChecked(false);
                     wifiSwitch.setText("WiFi is Off");
-                    notifOn("WiFi Terputus"); break;
+                    notification("WiFi Terputus"); break;
             }
         }
     };
 
-    public void notifOn(String message){
+    public void notification(String message){
         String CHANNEL_ID = "NOTIF";
         NotificationChannel mChannel = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            mChannel = new NotificationChannel(CHANNEL_ID, "MY channel", NotificationManager.IMPORTANCE_HIGH);
+            mChannel = new NotificationChannel(CHANNEL_ID, "NOTIF", NotificationManager.IMPORTANCE_HIGH);
             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(mChannel);
             android.app.Notification notification = new NotificationCompat.Builder(HomeActivity2.this, CHANNEL_ID)
@@ -141,23 +141,17 @@ public class HomeActivity2 extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked && !wifiManager.isWifiEnabled()) {
-                    //semenjak Android Q, Sistem tidak dapat mematikan wifi secara langsung
-                    //jika versi android adalah Android Q atau lebih maka harus melalui jendela setelan
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                        //digunakan untuk menampilkan panel wifi untuk memilih jaringan wifi
                         Intent panelIntent = new Intent(Settings.Panel.ACTION_WIFI);
                         HomeActivity2.this.startActivityForResult(panelIntent, 1);
                     } else {
                         wifiManager.setWifiEnabled(true);
                     }
                 } else if (!isChecked && wifiManager.isWifiEnabled()) {
-                    //semenjak Android Q, Sistem tidak dapat mematikan wifi secara langsung
-                    //jika versi android adalah Android Q atau lebih maka harus melalui jendela setelan
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                         Intent panelIntent = new Intent(Settings.Panel.ACTION_WIFI);
                         HomeActivity2.this.startActivityForResult(panelIntent, 1);
                     } else {
-                        //jika versi dibawah nya, maka masih dapat melakukan pemutusan wifi secara langsung
                         wifiManager.setWifiEnabled(false);
                     }
                 }
