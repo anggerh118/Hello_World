@@ -4,33 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#009688"
     tools:context=".HomeActivity2">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/halaman"
+        app:layout_constraintBottom_toTopOf="@+id/wifiSwitcher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:tabTextColor="@color/colorWhite"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/Fragment1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="First Fragment" />
+            android:text="Chat" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/Fragment2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Second Fragment" />
+            android:text="Panggilan" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Fragment3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginTop="32dp"
+        android:background="@drawable/halaman"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout"
@@ -41,6 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
+        android:textColor="@color/colorWhite"
         android:text="WiFi is Off"
         app:layout_constraintBottom_toTopOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="parent"

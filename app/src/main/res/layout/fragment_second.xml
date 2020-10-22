@@ -9,7 +9,9 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Second Fragment"
-        android:textColor="#000000"
+        android:text="Panggilan Fragment"
+        android:layout_gravity="center"
+        android:background="#4CAF50"
+        android:textColor="@color/colorWhite"
         android:textSize="36sp" />
 </FrameLayout>
