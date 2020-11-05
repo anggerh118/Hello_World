@@ -6,7 +6,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -14,6 +17,9 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
@@ -24,17 +30,26 @@ public class HomeActivity2 extends AppCompatActivity {
     private Switch wifiSwitch;
     private WifiManager wifiManager;
 
+//    private static final String TAG = HomeActivity2;
+//    private Button btnStartJob;
+//    private Button btnStopJob;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
         hideTitleBar();
         TabLayout tabLayout = findViewById(R.id.tabLayout);
-        TabItem layoutOne = findViewById(R.id.Fragment1);
-        TabItem layoutTwo = findViewById(R.id.Fragment2);
+        TabItem layoutOne  = findViewById(R.id.Fragment1);
+        TabItem layoutTwo  = findViewById(R.id.Fragment2);
+        TabItem layoutThree = findViewById(R.id.Fragment3);
         final ViewPager viewPager = findViewById(R.id.viewPager);
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount() );
         viewPager.setAdapter(pagerAdapter);
+
+//        btnStartJob = findViewById(R.id.start);
+//        btnStartJob = findViewById(R.id.start);
+
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -55,20 +70,6 @@ public class HomeActivity2 extends AppCompatActivity {
 
         wifiSwitch = findViewById(R.id.wifiSwitcher);
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-
-//        wifiSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                if(isChecked){
-//                    wifiManager.setWifiEnabled(true);
-//                    wifiSwitch.setText("Wifi is On");
-//                }
-//                else{
-//                    wifiManager.setWifiEnabled(false);
-//                    wifiSwitch.setText("Wifi is Off");
-//                }
-//            }
-//        });
 
         initBroadcastReceiver();
 
@@ -158,4 +159,29 @@ public class HomeActivity2 extends AppCompatActivity {
             }
         });
     }
+//    public void scheduleJob(View view){
+//        ComponentName componentName = new ComponentName(getApplicationContext(), MyJobService.class);
+//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+//            JobInfo info = new JobInfo.Builder(123, componentName)
+//                    .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
+//                    .setPersisted(true)
+//                    .setPeriodic(15*60*1000)
+//                    .build();
+//
+//            JobScheduler scheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+//            int resultCode = scheduler.schedule(info);
+//            if(resultCode == JobScheduler.RESULT_SUCCESS){
+//                Log.i(TAG, "scheduleJob: Job Scheduler");
+//            }
+//            else{
+//                Log.i(TAG, "scheduleJob: Job Scheduling Failed");
+//            }
+//        }
+//    }
+//
+//    public void canceledJob(View view){
+//        JobScheduler scheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+//        scheduler.cancel(123);
+//        Log.i(TAG, "canceledJob: cancleJob");
+//    }
 }
