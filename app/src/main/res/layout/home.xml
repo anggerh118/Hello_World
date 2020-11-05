@@ -26,13 +26,13 @@
             android:id="@+id/Fragment1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chat" />
+            android:text="Job Scheduler" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/Fragment2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Panggilan" />
+            android:text="Recycler View" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/Fragment3"
@@ -43,11 +43,12 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="581dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/halaman"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout"
         tools:ignore="MissingConstraints" />
@@ -56,10 +57,11 @@
         android:id="@+id/wifiSwitcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:textColor="@color/colorWhite"
+        android:layout_marginBottom="8dp"
         android:text="WiFi is Off"
+        android:textColor="@color/colorWhite"
         app:layout_constraintBottom_toTopOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
