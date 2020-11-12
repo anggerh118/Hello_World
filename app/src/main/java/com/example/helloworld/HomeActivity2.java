@@ -26,9 +26,13 @@ import android.widget.Switch;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.prefs.Preferences;
+
 public class HomeActivity2 extends AppCompatActivity {
     private Switch wifiSwitch;
     private WifiManager wifiManager;
+    private Button btnLogout;
+    SharedPrefManager sharedPrefManager;
 
 //    private static final String TAG = HomeActivity2;
 //    private Button btnStartJob;
@@ -46,7 +50,7 @@ public class HomeActivity2 extends AppCompatActivity {
         final ViewPager viewPager = findViewById(R.id.viewPager);
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount() );
         viewPager.setAdapter(pagerAdapter);
-
+        btnLogout = findViewById(R.id.logout);
 //        btnStartJob = findViewById(R.id.start);
 //        btnStartJob = findViewById(R.id.start);
 
@@ -81,6 +85,16 @@ public class HomeActivity2 extends AppCompatActivity {
             wifiSwitch.setChecked(false);
             wifiSwitch.setText("WiFi is Off");
         }
+        sharedPrefManager = new SharedPrefManager(this);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, false);
+                startActivity(new Intent(HomeActivity2.this, LoginActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+                finish();
+            }
+        });
     }
 
     private void hideTitleBar(){
@@ -159,6 +173,8 @@ public class HomeActivity2 extends AppCompatActivity {
             }
         });
     }
+
+
 //    public void scheduleJob(View view){
 //        ComponentName componentName = new ComponentName(getApplicationContext(), MyJobService.class);
 //        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
