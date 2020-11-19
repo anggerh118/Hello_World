@@ -38,7 +38,13 @@
             android:id="@+id/Fragment3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Status" />
+            android:text="Firebase" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/Fragment4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Mahasiswa" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

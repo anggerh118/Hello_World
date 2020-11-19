@@ -19,6 +19,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
             case 0: return new FirstFragment();
             case 1: return new SecondFragment();
             case 2: return new ThirdFragment();
+            case 3: return new DataMahasiswa();
             default: return null;
         }
     }

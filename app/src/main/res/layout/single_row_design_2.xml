@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:elevation="4dp"
+    app:cardUseCompatPadding="true"
+    android:id="@+id/singlerow2"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/namaTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nama"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="-34dp"
+            android:layout_marginRight="-37dp"
+            android:gravity="center_vertical"
+            android:text="Nama  :"
+            android:textColor="#000"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/nimTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/namaTag"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="-1dp"
+            android:layout_marginRight="-37dp"
+            android:gravity="center_vertical"
+            android:text="NIM     :"
+            android:textColor="#000"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/noTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/namaTag"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="-37dp"
+            android:gravity="center_vertical"
+            android:text="No. Hp:"
+            android:textColor="#000"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nim"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nama"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="9dp"
+            android:layout_toRightOf="@+id/namaTag"
+            android:gravity="center_vertical"
+            android:text="nim"
+            android:textColor="#000"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="64dp"
+            android:layout_toRightOf="@+id/namaTag"
+            android:gravity="center_vertical"
+            android:text="This is Header Text"
+            android:textColor="#000"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nomorhp"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nim"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="13dp"
+            android:layout_toRightOf="@+id/namaTag"
+            android:gravity="center_vertical"
+            android:text="nomorhp"
+            android:textColor="#000"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/alert"
+            android:layout_width="388dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nomorhp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="-94dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="0dp"
+            android:layout_toRightOf="@+id/namaTag"
+            android:gravity="center_vertical"
+            android:text="Untuk melakukan delete, pergi ke tab Firebase, kemudian isikan NIM mahasiswa yang akan dihapus saja."
+            android:textColor="#000"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
