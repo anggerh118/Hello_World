@@ -47,6 +47,7 @@ public class HomeActivity2 extends AppCompatActivity {
         TabItem layoutOne  = findViewById(R.id.Fragment1);
         TabItem layoutTwo  = findViewById(R.id.Fragment2);
         TabItem layoutThree = findViewById(R.id.Fragment3);
+        TabItem layoutFour = findViewById(R.id.Fragment4);
         final ViewPager viewPager = findViewById(R.id.viewPager);
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount() );
         viewPager.setAdapter(pagerAdapter);

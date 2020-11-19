@@ -53,8 +53,6 @@ public class SignUp_Activity extends AppCompatActivity {
                 }
             }
         });
-
-
     }
 
     public static Spanned fromHtml(String html){
